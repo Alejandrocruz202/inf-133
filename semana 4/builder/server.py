@@ -39,7 +39,12 @@ class Pizzeria:
         for topping in toppings:
             self.builder.add_topping(topping)
         return self.builder.get_pizza()
-
+class PizzaService():
+        def create_pizzaservice(self, tamaño , masa , toppings):
+            builder = PizzaBuilder()
+            pizzeria = Pizzeria(builder)
+            pizza = pizzeria.create_pizza(tamaño, masa, toppings)
+            return pizza
 # Manejador de solicitudes HTTP
 class PizzaHandler(BaseHTTPRequestHandler):
     def do_POST(self):
@@ -53,10 +58,8 @@ class PizzaHandler(BaseHTTPRequestHandler):
             masa = data.get('masa', None)
             toppings = data.get('toppings', [])
 
-            builder = PizzaBuilder()
-            pizzeria = Pizzeria(builder)
-
-            pizza = pizzeria.create_pizza(tamaño, masa, toppings)
+            pizzaservice=PizzaService()
+            pizza=pizzaservice.create_pizzaservice(tamaño=tamaño,masa=masa,toppings=toppings)
 
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
