@@ -143,14 +143,4 @@ for row in cursor:
 # (2, 2, 2, '2024-01-30')
 
 # Cerrar conexión
-print("\nMATRICULACION:")
-cursor = conn.execute(
-    """
-    SELECT ESTUDIANTES.nombre, ESTUDIANTES.apellido, CARRERAS.nombre, MATRICULACION.fecha 
-    FROM MATRICULACION
-    JOIN ESTUDIANTES ON MATRICULACION.estudiante_id = ESTUDIANTES.id 
-    JOIN CARRERAS ON MATRICULACION.carrera_id = CARRERAS.id
-    """
-)
-for row in cursor:
-    print(row)
+conn.close()
