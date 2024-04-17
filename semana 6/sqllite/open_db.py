@@ -21,7 +21,7 @@ conn.execute(
 )
 
 # Consultar datos de matriculación INNER JOIN
-print("\nMATRICULAS: INNER JOIN")
+print("\nMATRICULAS:")
 cursor = conn.execute(
     """
     SELECT ESTUDIANTES.nombre, ESTUDIANTES.apellido, CARRERAS.nombre, MATRICULAS.fecha 

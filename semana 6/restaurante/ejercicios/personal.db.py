@@ -27,12 +27,12 @@ conn.execute(
     (
         id INTEGER PRIMARY KEY,
         nombre TEXT NOT NULL,
-        apellido_paterno TEXT NOT NULL,
-        apellido_materno TEXT NOT NULL,
-        fecha_conteratacion DATE NOT NULL,
-        departamento_id INTEGER NOT NULL,
-        cargo_id INTEGER NOT NULL,
-        fecha_creacion TEXT NOT NULL,
+            apellido_paterno TEXT NOT NULL,
+            apellido_materno TEXT NOT NULL,
+            fecha_conteratacion DATE NOT NULL,
+            departamento_id INTEGER NOT NULL,
+            cargo_id INTEGER NOT NULL,
+            fecha_creacion TEXT NOT NULL,
         FOREIGN KEY (departamento_id) REFERENCES DEPARTAMENTOS(id),
         FOREIGN KEY (cargo_id) REFERENCES CARGOS(id)
     );
