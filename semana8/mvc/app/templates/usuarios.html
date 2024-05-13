@@ -4,7 +4,7 @@
 <h2>Lista de Usuarios</h2>
 <ul>
     {% for user in users %}
-        <li>{{ user.first_name }} {{ user.last_name }} {{ user.email}} {{ user.contraseña }} {{ user.fecha_de_nacimient }}</li>
+        <li>{{ user.first_name }} {{ user.last_name }} {{ user.email}} {{ user.contraseña }} {{ user.fecha }}</li>
     {% endfor %}
 </ul>
 {% endblock %}

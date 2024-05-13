@@ -127,7 +127,8 @@ conn.execute(
     """
     UPDATE MATRICULACION
     SET fecha = '2024-01-30'
-    WHERE id = 2
+    WHERE 
+    id = 2
     """
 )
 # Listar datos de matriculación
